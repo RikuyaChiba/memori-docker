@@ -13,6 +13,7 @@ services:
       - type: bind
         source: ./memori-front/src
         target: /app/memori-front
+    working_dir: /app/memori-front
         
   memori-front-app:
     build: 
@@ -24,6 +25,7 @@ services:
       - type: bind
         source: ./memori-front/src
         target: /app/memori-front
+    working_dir: /app/memori-front
 
   # batch
   memori-batch-web:
@@ -36,6 +38,7 @@ services:
         target: /app/memori-batch
     depends_on:
       - memori-batch-app
+    working_dir: /app/memori-batch
 
   memori-batch-app:
     build: 
@@ -45,6 +48,7 @@ services:
       - type: bind
         source: ./memori-batch/src
         target: /app/memori-batch
+    working_dir: /app/memori-batch
 
   # db
   db:
